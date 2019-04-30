@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(252, 245, 236);
+}
+label{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 200%;
+    align-content: left;
+  }
+output{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 200%;
+    align-content: left;
+  }
+  .displayWrapper {
+    width: 80%;
+    padding: 13px;
+    background-color: burlywood;
+    margin: auto;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1vw ;
+    border-radius: 10px;
+    border: 2px solid black;
+    
+}
+h1{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 250%;
+    text-align: center;
+}
+       
+.container > div {
+    border-radius: 5px;
+    padding: 5px 0;
+    
+  } .container {
+    display: grid;
+    /*align-content: space-between;*/
+    justify-content: center;
+    /*grid-template-columns: 275px 80px 100px 40px 50px;*/
+    grid-template-columns: 40% 13% 13% 8% 8%;
+  } 
+  .UOM{
+      color:rgb(252, 245, 236);
+  }

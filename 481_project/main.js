@@ -196,65 +196,80 @@ $(document).ready(function () {
         alert(message);
     }
     // START Birth Weight Javascript
+    function displayWeights(){
+            // $("#displayBirthWeight").val(birthWeight.toFixed(1));
+            $("#display_bwlbs").val(sessionStorage.bwLbs);
+            $("#display_bwOz").val(sessionStorage.bwOz);
+            $("#display_bwkgs").val(sessionStorage.bwKg);
+
+            //$("#displayCurrentWeight").val(currentWeight.toFixed(1));
+            $("#display_cwlbs").val(sessionStorage.cwLbs);
+            $("#display_cwOz").val(sessionStorage.cwOz);
+            $("#display_cwkgs").val(sessionStorage.cwKg);
+
+    }
+    
     bwOnLoad();
     function bwOnLoad (){
+        displayWeights();
         if(sessionStorage.bwOz === "" || sessionStorage.bwOz === null || sessionStorage.bwOz==="undefined")
         {
             var birthWeight = sessionStorage.bwLbs;
         }else{
             var  birthWeight = parseFloat(sessionStorage.bwLbs) + parseFloat(sessionStorage.bwOz * 0.0625);
         }
-        console.log(birthWeight);       
+              
         if(sessionStorage.cwOz === "" || sessionStorage.cwOz === null || sessionStorage.cwOz==="undefined")
         {
             var currentWeight = sessionStorage.cwLbs;
         }else{
             var currentWeight = parseFloat(sessionStorage.cwLbs) +parseFloat(sessionStorage.cwOz * 0.0625);
         }
-        console.log(currentWeight)
-            $("#displayBirthWeight").val(birthWeight.toFixed(1));
-            $("#displayCurrentWeight").val(currentWeight.toFixed(1));
+            
         var difference = currentWeight - birthWeight;
             $("#DifferenceOutput").val(difference.toFixed(1));
+
         var PercentFromBirthWeight = (difference/birthWeight)* 100;
         
-
         if(PercentFromBirthWeight < 0){
-            $("#DisplayOutput").val(PercentFromBirthWeight.toFixed(1));
-            $('#DisplayOutput').css("color", "red");
+            $("#DisplayPercentage").val(PercentFromBirthWeight.toFixed(1));
+            $('#DisplayPercentage').css("color", "red");
         }else{
-            $("#DisplayOutput").val(PercentFromBirthWeight.toFixed(1));
+            $("#DisplayPercentage").val(PercentFromBirthWeight.toFixed(1));
         }
 }
 
-
+/*
     $("#saveInfo").on("click", function(){
+        displayWeights();
         if(sessionStorage.bwOz === "" || sessionStorage.bwOz === null || sessionStorage.bwOz==="undefined")
         {
             var birthWeight = sessionStorage.bwLbs;
         }else{
-            var birthWeight =  parseFloat(sessionStorage.bwLbs) + parseFloat( sessionStorage.bwOz * 0.0625);
+            var  birthWeight = parseFloat(sessionStorage.bwLbs) + parseFloat(sessionStorage.bwOz * 0.0625);
         }
+              
         if(sessionStorage.cwOz === "" || sessionStorage.cwOz === null || sessionStorage.cwOz==="undefined")
         {
-            var CurrentWeight = sessionStorage.cwLbs;
+            var currentWeight = sessionStorage.cwLbs;
         }else{
-            var CurrentWeight =  parseFloat(sessionStorage.cwLbs) + parseFloat( sessionStorage.cwOz * 0.0625);
+            var currentWeight = parseFloat(sessionStorage.cwLbs) +parseFloat(sessionStorage.cwOz * 0.0625);
         }
-        $("#displayBirthWeight").val(birthWeight);
-        $("#displayCurrentWeight").val(CurrentWeight);
-        var difference = CurrentWeight - birthWeight;
-        $("#DifferenceOutput").val(difference);
+            
+           
+        var difference = currentWeight - birthWeight;
+            $("#DifferenceOutput").val(difference.toFixed(1));
+
         var PercentFromBirthWeight = (difference/birthWeight)* 100;
         
         if(PercentFromBirthWeight < 0){
-            $("#DisplayOutput").val(PercentFromBirthWeight.toFixed(1));
-            $('#DisplayOutput').css("color", "red");
+            $("#DisplayPercentage").val(PercentFromBirthWeight.toFixed(1));
+            $('#DisplayPercentage').css("color", "red");
         }else{
-            $("#DisplayOutput").val(PercentFromBirthWeight.toFixed(1));
+            $("#DisplayPercentage").val(PercentFromBirthWeight.toFixed(1));
         }
 
-        });
+        });*/
     
     // START Glasgow Coma Javascript
     // Page colors set here
