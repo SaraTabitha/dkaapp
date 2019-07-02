@@ -21,7 +21,11 @@
 #info{
     color:black;
 }
-
+/* centering patient data form */
+form{
+    width: 50%;
+    margin: 0 auto;
+}
 
 input{
     width: 50px;
@@ -49,15 +53,19 @@ html, body{
     overflow-x: hidden;
 }
 /* header styling */
-header{
+#patient_data{
+    text-align: center;
+}
+
+/* header{
     background:#406682;
     color:#f1f1f1;
     display:block;
     top:0;
     
     height: 7%;
-}
-main{
+} */
+/* main{
     display: block;
     padding-top: 20px;
     height: 100%;
@@ -80,7 +88,7 @@ main{
         padding-left: 12px;
         padding-top:15px;
     }
-}
+} */
 
 /* .content{
     padding:16px;
