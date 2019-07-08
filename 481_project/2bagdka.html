@@ -10,100 +10,81 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                     <script src="main.js"></script>
                     <script src="2bagdka.js"></script>
-            
+             <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
                 </head>
     <body>
-            <header>
-
-        
-                    <div class="header">
-                        <!-- start buttons -->
-                           <div class="column">
-                                <div id="infoButton" class="headerbutton">
-                                    <span >
-                                        <i class="fas fa-book-medical fa-2x"></i>
-                                    </span>
-                                    <!-- <p>Patient Info</p> -->
-                                </div>
-                           </div>
-                           <div class="column">
-                               <div id="homeButton" class="headerbutton">
-                                    <span><a id="homelink" href ="index.html">
-                                        <i class="fas fa-home fa-2x"></i>
-                                    </a></span>
-                                    <!-- <p>Home</p> -->
-                                </div>
-                           </div>
-                           <!-- end buttons -->
+    <header>
+            <!-- nav -->
+                <nav class="navbar navbar-light bg-light">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                             <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                     </ul>
+                    <!-- toggles patient data section below -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                     Patient Data
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                    </button>
+                </nav>
             
+                <!-- togglable patient data section -->
+                <div class="pos-f-t">
+                    <div class="collapse" id="navbarToggleExternalContent">
+                        <div id="patient_data" class="bg-light p-4">
+                            <h5 class="text-black h4">Patient Data</h5>
+                            <span class="text-muted">
+                                <form>
+                                    <!-- current weight -->
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                        <span class="input-group-text">Current Weight</span>
+                                        </div>
+                                        <input type="text" id="cwLbs" placeholder="lbs" aria-label="current weight lbs" class="form-control">
+                                        <input type="text" id="cwOz" placeholder="oz" aria-label="current weight oz" class="form-control">
+                                        <p>or</p> 
+                                        <input type="text" id="cwKg" class="form-control" placeholder="kg" aria-label="current weight kg" aria-describedby="basic-addon1">
+                                    </div>
+                                    <!-- end current weight -->
             
-                           
+                                    <!-- Age -->
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="ageType">Age</label>
+                                        </div>
+                                        <input id="age" type="text"  aria-label="age" class="form-control">
+                                        <select id="ageType" class="custom-select" >
+                                            <option selected value="years">Year(s)</option>
+                                            <option value="months">Month(s)</option>
+                                            <option value="days">Day(s)</option>
+                                        </select>
+                                    </div>
+                                    <!-- end age -->
+            
+                                    <!-- birth weight -->
+                                    <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text">Birth Weight</span>
+                                            </div>
+                                            <input type="text" id="bwLbs" placeholder="lbs" aria-label="birth weight lbs" class="form-control">
+                                            <input type="text" id="bwOz" placeholder="oz" aria-label="birth weight oz" class="form-control">
+                                            <p>or</p> 
+                                            <input type="text" id="bwKg" class="form-control" placeholder="kg" aria-label="birth weight kg" aria-describedby="basic-addon1">
+                                    </div>
+                                    <!-- end birth weight -->
+                                    <br>
+                                    <button class="btn btn-primary" id="saveInfo">Save</button>
+                                </form>
+                                <p><em>Data that you enter here is saved only for the duration of your current session.
+                                    If you exit the site you will have to reenter data. 
+                                <br> Calculations that require this data will automatically grab it from the appropriate fields.</em></p>
+                            </span> 
+                        </div>
                     </div>
-                    <!-- start info -->
-                    <div id="info" class="infoHidden">
-                            <span style="font-size: 24px; font-weight: bold;">Patient Information</span>
-                            <div>
-                                <div>
-                                    <span style="display: inline-block">Current Weight</span>
-                                    <div class="inputWrapper">
-                                        <input type="text" id="cwLbs">
-                                        <br />
-                                        <div class="label">lbs</div>
-                                    </div>
-                                    <div class="inputWrapper">
-                                        <input type="text" id="cwOz">
-                                        <span>or</span>
-                                        <br />
-                                        <div class="label">oz</div>
-                
-                                    </div>
-                
-                                    <div class="inputWrapper">
-                                        <input type="text" id="cwKg">
-                                        <br />
-                                        <div class="label">kgs</div>
-                                    </div>
-                                </div>
-                
-                                <div>
-                                    <span>Age</span>
-                                    <input type="text" id="age">
-                                    <select id="ageType">
-                                        <option value="" disabled selected>Select your option</option>
-                                        <option value="years">Years</option>
-                                        <option value="months">Months</option>
-                                        <option value="days">Days</option>
-                                    </select>
-                                </div>
-                
-                                <div>
-                                    <div>Birth Weight</div>
-                                    <div class="inputWrapper">
-                                        <input type="text" id="bwLbs">
-                                        <br />
-                                        <div class="label">lbs</div>
-                                    </div>
-                                    <div class="inputWrapper">
-                                        <input type="text" id="bwOz">
-                                        <span>or</span>
-                                        <br />
-                                        <div class="label">oz</div>
-                
-                                    </div>
-                
-                                    <div class="inputWrapper">
-                                        <input type="text" id="bwKg">
-                                        <br />
-                                        <div class="label">kgs</div>
-                                    </div>
-                                </div>
-                                <button id="saveInfo">Save</button>
-                            </div>
-                        
-                        <!-- end info -->
-                    <!-- this will be a dropddown div, the infopage.php file includes that div -->
-                    
-                </header>
+                </div>
+        </header>
     <main class="content">
     <div class='displayBlock'>
         <table class="tg centered">
@@ -180,4 +161,13 @@ Check BOHB results and consider readiness to transition off insulin infusion</pr
     </div>
 </main>
 </body>
+<footer>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="main.js"></script>
+        <!-- bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </footer>
 </html>

@@ -15,7 +15,6 @@
     </head>
     <body>
     <header>
-
         <!-- nav -->
             <nav class="navbar navbar-light bg-light">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -42,23 +41,23 @@
                                     <div class="input-group-prepend">
                                     <span class="input-group-text">Current Weight</span>
                                     </div>
-                                    <input type="text" placeholder="lbs" aria-label="current weight lbs" class="form-control">
-                                    <input type="text" placeholder="oz" aria-label="current weight oz" class="form-control">
+                                    <input type="text" id="cwLbs" placeholder="lbs" aria-label="current weight lbs" class="form-control">
+                                    <input type="text" id="cwOz" placeholder="oz" aria-label="current weight oz" class="form-control">
                                     <p>or</p> 
-                                    <input type="text" class="form-control" placeholder="kg" aria-label="current weight kg" aria-describedby="basic-addon1">
+                                    <input type="text" id="cwKg" class="form-control" placeholder="kg" aria-label="current weight kg" aria-describedby="basic-addon1">
                                 </div>
                                 <!-- end current weight -->
 
                                 <!-- Age -->
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect01">Age</label>
+                                        <label class="input-group-text" for="ageType">Age</label>
                                     </div>
-                                    <input type="text"  aria-label="age" class="form-control">
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected value="1">Year(s)</option>
-                                        <option value="2">Month(s)</option>
-                                        <option value="3">Day(s)</option>
+                                    <input id="age" type="text"  aria-label="age" class="form-control">
+                                    <select id="ageType" class="custom-select" >
+                                        <option selected value="years">Year(s)</option>
+                                        <option value="months">Month(s)</option>
+                                        <option value="days">Day(s)</option>
                                     </select>
                                 </div>
                                 <!-- end age -->
@@ -68,23 +67,22 @@
                                         <div class="input-group-prepend">
                                         <span class="input-group-text">Birth Weight</span>
                                         </div>
-                                        <input type="text" placeholder="lbs" aria-label="birth weight lbs" class="form-control">
-                                        <input type="text" placeholder="oz" aria-label="birth weight oz" class="form-control">
+                                        <input type="text" id="bwLbs" placeholder="lbs" aria-label="birth weight lbs" class="form-control">
+                                        <input type="text" id="bwOz" placeholder="oz" aria-label="birth weight oz" class="form-control">
                                         <p>or</p> 
-                                        <input type="text" class="form-control" placeholder="kg" aria-label="birth weight kg" aria-describedby="basic-addon1">
+                                        <input type="text" id="bwKg" class="form-control" placeholder="kg" aria-label="birth weight kg" aria-describedby="basic-addon1">
                                 </div>
                                 <!-- end birth weight -->
-
+                                <br>
+                                <button class="btn btn-primary" id="saveInfo">Save</button>
                             </form>
-
+                            <p><em>Data that you enter here is saved only for the duration of your current session.
+                                If you exit the site you will have to reenter data. 
+                            <br> Calculations that require this data will automatically grab it from the appropriate fields.</em></p>
                         </span> 
                     </div>
                 </div>
             </div>
-
-
-        
-        
     </header>
 
     <main class="content homePage">
