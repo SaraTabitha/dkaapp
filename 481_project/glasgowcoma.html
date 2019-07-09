@@ -15,7 +15,6 @@
 		<meta charset="UTF-8">
 		<title>Glasgow Coma Scale</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="main.js"></script>
 		<link rel="stylesheet" href="styles.css">
 		<!-- icons -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -64,7 +63,7 @@
 										<label class="input-group-text" for="ageType">Age</label>
 									</div>
 									<input id="age" type="text"  aria-label="age" class="form-control">
-									<select id="ageType" class="custom-select" >
+									<select id="ageType" class="custom-select">
 										<option selected value="years">Year(s)</option>
 										<option value="months">Month(s)</option>
 										<option value="days">Day(s)</option>
@@ -96,42 +95,84 @@
 	</header>
 	<main class="content">
 		
-	<form>
+	<form id="glasgow-form">
 		<h1>Glasgow Coma Scale</h1>
-		<!-- Eye Opening Response -->
-		<div class="form-group">
-			<label for="eye-opening-response"><strong>Eye Opening Response</strong></label>
-			<select multiple class="form-control" id="eye-opening-response">
-			  <option value="4">Spontaneous--open with blinking at baseline</option>
-			  <option value="3">To verbal stimuli, command, speech</option>
-			  <option value="2">To pain only (not applied to face) </option>
-			  <option value="1">No response</option>
-			</select>
-		</div>
-		<!-- Verbal Response -->
-		<div class="form-group">
-			<label for="verbal-response"><strong>Verbal Response</strong></label>
-			<select multiple class="form-control" id="verbal-response">
-				<option value="5">Oriented</option>
-				<option value="4">Confused conversation, but able to answer questions</option>
-				<option value="3">Inappropriate words</option>
-				<option value="2">Incomprehensible speech</option>
+		<p><strong>Age:</strong> <span id="age-copy"></span></p>
+
+		<p  id="no-age-warning">Please fill out the patient's Age in Patient Data.</p>
+		<div id="younger" > <!-- less than or equal to 2 years old -->
+			<!-- Eye Opening Response -->
+			<div class="form-group">
+				<label for="eye-opening-response"><strong>Eye Opening Response</strong></label>
+				<select multiple class="form-control" id="eye-opening-response">
+				<option value="4">Spontaneous--open with blinking at baseline</option>
+				<option value="3">To verbal stimuli, command, speech</option>
+				<option value="2">To pain only (not applied to face) </option>
 				<option value="1">No response</option>
-			</select>
+				</select>
+			</div>
+			<!-- Verbal Response -->
+			<div class="form-group">
+				<label for="verbal-response"><strong>Verbal Response</strong></label>
+				<select multiple class="form-control" id="verbal-response">
+					<option value="5">Coos, babbles</option>
+					<option value="4">Irritable cries</option>
+					<option value="3">Cries in response to pain</option>
+					<option value="2">Moans in response to pain</option>
+					<option value="1">No response</option>
+				</select>
+			</div>
+			<!-- Motor Response -->
+			<div class="form-group">
+				<label for="motor-response"><strong>Motor Response</strong></label>
+				<select multiple class="form-control" id="motor-response">
+					<option value="6">Moves spontaneously/purposefully</option>
+					<option value="5">Withdraws in response to touch</option>
+					<option value="4">Withdraws in response to pain</option>
+					<option value="3">Flexion in response to pain (decorticate posturing)</option>
+					<option value="2">Extension response in response to pain (decerebrate posturing)</option>
+					<option value="1">No response</option>
+				</select>
+			</div>
 		</div>
-		<!-- Motor Response -->
-		<div class="form-group">
-			<label for="motor-response"><strong>Motor Response</strong></label>
-			<select multiple class="form-control" id="motor-response">
-				<option value="6">Obeys commands for movement</option>
-				<option value="5">Purposful movement to painful stimulus</option>
-				<option value="4">Withdraws in response to from pain</option>
-				<option value="3">Flexion in response to pain (decorticate posturing)</option>
-				<option value="2">Extension response in response to pain (decerebrate posturing)</option>
-				<option value="1">No response</option>
-			</select>
+		<div id="older" > <!-- greater than 2 years old -->
+			<!-- Eye Opening Response -->
+			<div class="form-group">
+					<label for="eye-opening-response"><strong>Eye Opening Response</strong></label>
+					<select multiple class="form-control" id="eye-opening-response2">
+					<option value="4">Spontaneous--open with blinking at baseline</option>
+					<option value="3">To verbal stimuli, command, speech</option>
+					<option value="2">To pain only (not applied to face) </option>
+					<option value="1">No response</option>
+					</select>
+				</div>
+				<!-- Verbal Response -->
+				<div class="form-group">
+					<label for="verbal-response"><strong>Verbal Response</strong></label>
+					<select multiple class="form-control" id="verbal-response2">
+						<option value="5">Oriented</option>
+						<option value="4">Confused conversation, but able to answer questions</option>
+						<option value="3">Inappropriate words</option>
+						<option value="2">Incomprehensible speech</option>
+						<option value="1">No response</option>
+					</select>
+				</div>
+				<!-- Motor Response -->
+				<div class="form-group">
+					<label for="motor-response"><strong>Motor Response</strong></label>
+					<select multiple class="form-control" id="motor-response2">
+						<option value="6">Obeys commands for movement</option>
+						<option value="5">Purposful movement to painful stimulus</option>
+						<option value="4">Withdraws in response to from pain</option>
+						<option value="3">Flexion in response to pain (decorticate posturing)</option>
+						<option value="2">Extension response in response to pain (decerebrate posturing)</option>
+						<option value="1">No response</option>
+					</select>
+				</div>
 		</div>
-		<button class="btn btn-primary" type="submit">Submit</button>
+		<button id="glasgow-submit" class="btn btn-primary" type="submit">Submit</button>
+		<p style="color:red;" id="glasgow-response-error">Please select all responses.</p>
+
 		<br>
 		<br>
 		<table class="table table-bordered" style="width:0;">
@@ -142,7 +183,7 @@
 			</thead>
 			<tbody>
 			  <tr>
-				<td>--</td>
+				<td id="glasgow-score-here">--</td>
 			  </tr>
 			</tbody>
 		</table>
@@ -156,12 +197,8 @@
 			</thead>
 			<tbody>
 			<tr class="table-danger">
-				<td>Coma</td>
+				<td>Coma, Severe Head Injury</td>
 				<td>3 to 8</td>
-			</tr>
-			<tr class="table-danger">
-				<td>Severe Head Injury</td>
-				<td>8 or less</td>
 			</tr>
 			<tr class="table-warning">
 				<td>Moderate Head Injury</td>

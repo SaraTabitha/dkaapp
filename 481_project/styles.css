@@ -170,7 +170,13 @@ html, body{
 .tg .tg-baqh{text-align:center;vertical-align:top}
 
 /* START Glasgow Coma Styles */
-.selection {
+#no-age-warning{
+    color:red;
+}
+ #no-age-warning, #younger, #older, #glasgow-submit, #glasgow-response-error{
+    display: none;
+}
+/* .selection {
     border: 1px solid black;
     line-height: 25pt;
     margin: 1%;
@@ -219,7 +225,7 @@ html, body{
     font-size: medium;
     text-align: center;
     width: 40%;
-}
+} */
 /* END Glasgow Coma Style */
 .tg .tg-baqh{text-align:center;vertical-align:top}
 
