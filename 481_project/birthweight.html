@@ -86,26 +86,7 @@
 		</header>
 		<main class="content">
 	
-	<!-- <div class = "displayWrapper">
-					<h1> Percentage from Birthweight </h1><br>
-					<table>
-						<tr><td><label for="birthWeight">Birth Weight:</label></td>               
-							<td><input type="text" class="displayTextbox" id="displayBirthWeight" readonly value="" size="20"/><label>Lbs</label></td></tr>
-							
-					<tr><td><label for="currentWeigth">Current Weight:</label></td>
-							<td><input type="text" class="displayTextbox" id="displayCurrentWeight" readonly value="" size = "20"/><label>Lbs</label></td></tr>
-							
-					<tr><td><label for="difference">Difference:</label></td>
-							<td><input type="text" class="displayTextbox" name="Result" id="DifferenceOutput" readonly value="" size = "20"/><label>Lbs</label></td></tr>
-							
-						<tr><td><label for="percentage">%:</label></td>
-							<td><input type="text" class="displayTextbox" name="Result" id="DisplayOutput" readonly value="" size = "20"/></td></tr>
-					</table>               
-		</div>  -->
-
-		
-		
-			<div class = "displayWrapper">
+			<!-- <div class = "displayWrapper">
 					<h1> Percentage Weight from Birthweight </h1><br>
 				<div class="container">
 						<div><label for="birthWeight">Birth Weight:</label></div>
@@ -144,7 +125,44 @@
 						<div><output name ="DisplayPercentage" id ="DisplayPercentage"></output></div>
 						<div><label class ="UOM">%</label></div>		
 					</div> 
-				</div> 
+				</div>  -->
+			<form>
+				<h1>Percent Change in Birth Weight</h1>
+				<table class="table">
+					<thead>
+					  <tr>
+						<th scope="col"></th>
+						<th scope="col">lbs</th>
+						<th scope="col">oz</th>
+						<th scope="col">kg</th>
+						<th scope="col">%</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<th scope="row">Birth Weight</th>
+						<td id="display_bwlbs"></td>
+						<td id="display_bwOz"></td>
+						<td id="display_bwkgs"></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<th scope="row">Current Weight</th>
+						<td id="display_cwlbs"></td>
+						<td id="display_cwOz"></td>
+						<td id="display_cwkgs"></td>
+						<td></td>
+					  </tr>
+					  <tr>
+						<th scope="row">Weight Difference</th>
+						<td id="DifferenceOutput"></td>
+						<td></td> <!-- TODO: get oz for difference-->
+						<td></td> <!-- TODO: get kg for difference-->
+						<td id="DisplayPercentage"></td>
+					  </tr>
+					</tbody>
+				  </table>
+				</form>
 			</main>
 		</body>
 		<footer>

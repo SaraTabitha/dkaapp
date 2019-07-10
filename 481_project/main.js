@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     loadInfo();
 
-
+    // convert lbs to kg
     $("#cwLbs").on('keyup input', function () {
         var input = $("#cwLbs").val();
         input = input.replace(/[^0-9.]/g, '');
@@ -36,6 +36,7 @@ $(document).ready(function () {
         $("#cwKg").val(kg);
     });
 
+    // convert kg to lbs and oz
     $("#cwKg").on('keyup input', function ($event) {
         var input = $("#cwKg").val();
         input = input.replace(/[^0-9.]/g, '');
@@ -54,7 +55,7 @@ $(document).ready(function () {
 
         $("#cwOz").val(oz.toFixed(2));
     });
-
+    // convert oz to kg
     $("#cwOz").on('keyup input', function () {
         var input = $("#cwOz").val();
         input = input.replace(/[^0-9.]/g, '');
@@ -77,7 +78,7 @@ $(document).ready(function () {
         kg = kg.toFixed(2);
         $("#cwKg").val(kg);
     });
-
+    //convert lbs to kg
     $("#bwLbs").on('keyup input', function () {
         var input = $("#bwLbs").val();
         input = input.replace(/[^0-9.]/g, '');
@@ -100,7 +101,7 @@ $(document).ready(function () {
         kg = kg.toFixed(2);
         $("#bwKg").val(kg);
     });
-
+    //convert kg to lbs and oz
     $("#bwKg").on('keyup input', function () {
         var input = $("#bwKg").val();
         input = input.replace(/[^0-9.]/g, '');
@@ -119,7 +120,7 @@ $(document).ready(function () {
 
         $("#bwOz").val(oz.toFixed(2));
     });
-
+    //convert oz to kg
     $("#bwOz").on('keyup input', function () {
         var input = $("#bwOz").val();
         input = input.replace(/[^0-9.]/g, '');
@@ -166,6 +167,7 @@ $(document).ready(function () {
         populateTable();
     };
 
+    //2bag dka 
     populateTable = function() {
         var kgWeight = sessionStorage.cwKg;
         var maintenanceFluid;
@@ -195,17 +197,19 @@ $(document).ready(function () {
         $("#infoButton").click();
         alert(message);
     }
+
+
     // START Birth Weight Javascript
     function displayWeights(){
             // $("#displayBirthWeight").val(birthWeight.toFixed(1));
-            $("#display_bwlbs").val(sessionStorage.bwLbs);
-            $("#display_bwOz").val(sessionStorage.bwOz);
-            $("#display_bwkgs").val(sessionStorage.bwKg);
+            $("#display_bwlbs").text(sessionStorage.bwLbs);
+            $("#display_bwOz").text(sessionStorage.bwOz);
+            $("#display_bwkgs").text(sessionStorage.bwKg);
 
             //$("#displayCurrentWeight").val(currentWeight.toFixed(1));
-            $("#display_cwlbs").val(sessionStorage.cwLbs);
-            $("#display_cwOz").val(sessionStorage.cwOz);
-            $("#display_cwkgs").val(sessionStorage.cwKg);
+            $("#display_cwlbs").text(sessionStorage.cwLbs);
+            $("#display_cwOz").text(sessionStorage.cwOz);
+            $("#display_cwkgs").text(sessionStorage.cwKg);
 
     }
     
@@ -227,18 +231,19 @@ $(document).ready(function () {
         }
             
         var difference = currentWeight - birthWeight;
-            $("#DifferenceOutput").val(difference.toFixed(1));
+            $("#DifferenceOutput").text(difference.toFixed(1));
 
         var PercentFromBirthWeight = (difference/birthWeight)* 100;
         
         if(PercentFromBirthWeight < 0){
-            $("#DisplayPercentage").val(PercentFromBirthWeight.toFixed(1));
+            $("#DisplayPercentage").text(PercentFromBirthWeight.toFixed(1));
             $('#DisplayPercentage').css("color", "red");
         }else{
-            $("#DisplayPercentage").val(PercentFromBirthWeight.toFixed(1));
+            $("#DisplayPercentage").text(PercentFromBirthWeight.toFixed(1));
+            $('#DisplayPercentage').css("color", "green");
         }
-}
-
+    }
+    //end birth weight javascript
 /*
     $("#saveInfo").on("click", function(){
         displayWeights();
@@ -273,7 +278,6 @@ $(document).ready(function () {
     
     // START Glasgow Coma Javascript
 
-    
     function convertAge(val, type){
         //returns true if val >= 2; returns false if val < 2
         if(type == 'years'){
