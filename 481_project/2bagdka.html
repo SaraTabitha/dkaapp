@@ -86,33 +86,114 @@
                 </div>
         </header>
     <main class="content">
-    <div class='displayBlock'>
+        <form>
+            <h1>Two Bag DKA</h1>
+            <p id="dka-warning">Please fill out the patient's Birth Weight in Patient Data.</p>
+            <br>
+            <br>
+            <table class="table  table-bordered " id="dka-table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <!-- <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th> -->
+
+                        <th  scope="col">Blood Glucose(mg/Dl)</th>
+                        <th  scope="col">Rate from 0.45% saline 
+                        <br>20 mEq/L KAc 
+                        <br>20 mEq/L KPhos Bag (gtts/min)</th>
+                        <th  scope="col">Rate from
+                            10% Dextrose
+                            <br>0.45% saline
+                            <br>20 mEq/L KAc
+                            <br>20 mEq/L KPhos
+                            Bag
+                            (gtts/min)</th>
+                        <th  scope="col">Final
+                            Dextrose
+                            Concentration
+                            (%)</th>
+                        <th  scope="col">Insulin
+                            Infusion
+                            Rate
+                            (units/hr)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td >&gt;300</td>
+                            <td class=" fullRate"></td>
+                            <td class=" zeroRate"></td>
+                            <td >0</td>
+                            <td class=" infusionRate"></td>
+                        </tr>
+                        <tr>
+                            <td >250-299</td>
+                            <td class=" threeQuarterRate"></td>
+                            <td class="quarterRate"></td>
+                            <td >2.5</td>
+                            <td class=" infusionRate"></td>
+                        </tr>
+                        <tr>
+                            <td >200-249</td>
+                            <td class=" halfRate"></td>
+                            <td class=" halfRate"></td>
+                            <td >5</td>
+                            <td class=" infusionRate"></td>
+                        </tr>
+                        <tr>
+                            <td >150-199</td>
+                            <td class=" quarterRate"></td>
+                            <td class=" threeQuarterRate"></td>
+                            <td >7.5</td>
+                            <td class=" infusionRate"></td>
+                        </tr>
+                        <tr>
+                            <td >100-149</td>
+                            <td class=" zeroRate"></td>
+                            <td class=" fullRate"></td>
+                            <td >10</td>
+                            <td class=" infusionRate"></td>
+                        </tr>
+                        <tr>
+                            <td >&lt;100</td>
+                            <td  colspan="3">Discontinue the two-bag system and instead use D12.5% concentration with identical saline and electrolyte content.
+                                <br>Discuss with Attending.
+                                <br>Check BOHB results and consider readiness to transition off insulin infusion</td>
+                            <td class=" infusionRate"></td>
+                        </tr>
+                    </tbody>
+                  </table>
+        </form>
+        
+    <!-- <div class='displayBlock'>
         <table class="tg centered">
             <tr>
             <th class="tg-baqh"><pre>Blood
-Glucose
-(mg/Dl)</pre></th>
+                    Glucose
+                    (mg/Dl)</pre></th>
             <th class="tg-baqh"><pre>Rate from
-0.45% saline
-20 mEq/L KAc
-20 mEq/L KPhos
-Bag
-(gtts/min)</pre></th>
+                0.45% saline
+                20 mEq/L KAc
+                20 mEq/L KPhos
+                Bag
+                (gtts/min)</pre></th>
             <th class="tg-baqh"><pre>Rate from
-10% Dextrose
-0.45% saline
-20 mEq/L KAc
-20 mEq/L KPhos
-Bag
-(gtts/min)</pre></th>
+                10% Dextrose
+                0.45% saline
+                20 mEq/L KAc
+                20 mEq/L KPhos
+                Bag
+                (gtts/min)</pre></th>
             <th class="tg-baqh"><pre>Final
-Dextrose
-Concentration
-(%)</pre></th>
+                Dextrose
+                Concentration
+                (%)</pre></th>
             <th class="tg-baqh"><pre>Insulin
-Infusion
-Rate
-(units/hr)</pre></th>
+                Infusion
+                Rate
+                (units/hr)</pre></th>
             </tr>
             <tr>
             <td class="tg-baqh">&gt;300</td>
@@ -152,13 +233,13 @@ Rate
             <tr>
             <td class="tg-baqh">&lt;100</td>
             <td class="tg-baqh" colspan="3"><pre>Discontinue the two-bag system and instead use D12.5%
-concentration with identical saline and electrolyte content.
-Discuss with Attending.
-Check BOHB results and consider readiness to transition off insulin infusion</pre></td>
+                concentration with identical saline and electrolyte content.
+                Discuss with Attending.
+                Check BOHB results and consider readiness to transition off insulin infusion</pre></td>
             <td class="tg-baqh infusionRate"></td>
             </tr>
         </table>
-    </div>
+    </div> -->
 </main>
 </body>
 <footer>

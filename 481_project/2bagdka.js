@@ -1,13 +1,19 @@
 $(function() {
-    if(sessionStorage.cwKg == undefined) {
-        infoPrompt("Please enter the patient's weight");
+    if(sessionStorage.cwKg == "undefined" || sessionStorage.cwKg == "" ) {
+        infoPrompt();
     } else {
+        $("#dka-warning").css("display", "none");
+        $("#dka-table").css("display", "table");
         populateTable(); 
     }
 
     $("#saveInfo").click(function() {
-        if(sessionStorage.cwKg == undefined) {
-            infoPrompt("Please enter the patient's weight");
+        if(sessionStorage.cwKg == "undefined" || sessionStorage.cwKg == "") {
+            infoPrompt();
+        }
+        else{
+            $("#dka-warning").css("display", "none");
+            $("#dka-table").css("display", "table");
         }
     })
 })

@@ -193,9 +193,11 @@ $(document).ready(function () {
         $(".infusionRate").text(insulinInfusionUnits.toFixed(2));
     }
 
-    infoPrompt = function(message) {
-        $("#infoButton").click();
-        alert(message);
+    infoPrompt = function() {
+        $("#dka-warning").css("display", "initial");
+        $("#dka-table").css("display", "none");
+        // $("#infoButton").click();
+        // alert(message);
     }
 
 
@@ -212,7 +214,21 @@ $(document).ready(function () {
             $("#display_cwkgs").text(sessionStorage.cwKg);
 
     }
-    
+    function checkWeight(){
+        if(sessionStorage.bwLbs == "undefined" || sessionStorage.bwOz == "undefined" || sessionStorage.bwKg == "undefined" || sessionStorage.cwLbs == "undefined" || sessionStorage.cwOz == "undefined" || sessionStorage.cwKg == "undefined"
+        || sessionStorage.bwLbs == "" || sessionStorage.bwOz == "" || sessionStorage.bwKg == "" || sessionStorage.cwLbs == "" || sessionStorage.cwOz == "" || sessionStorage.cwKg == ""){
+            //user needs to fill out weights for the page 
+            $("#weight-warning").css("display", "initial");
+            $("#weight-table").css("display", "none");
+        }
+        else{
+            $("#weight-warning").css("display", "none");
+            $("#weight-table").css("display", "table");
+        }
+    }
+    console.log(sessionStorage.bwLbs + " " + sessionStorage.bwOz +  " " +sessionStorage.bwKg +" " +sessionStorage.cwLbs+" " +sessionStorage.cwOz+" " +sessionStorage.cwKg);
+    checkWeight();
+
     bwOnLoad();
     function bwOnLoad (){
         displayWeights();
@@ -340,9 +356,7 @@ $(document).ready(function () {
         }
     }
     checkAge();
-    $("saveInfo").click(function(){
-        checkAge();
-    });
+    
     
     $("#glasgow-form").submit(function(){
         // prevents page from refreshing when the submit button is pressed
@@ -540,4 +554,9 @@ $(document).ready(function () {
     //     gcCalculate();
     // });
     // END Glasgow Coma Javascript
+
+    $("saveInfo").click(function(){
+        checkAge();
+        checkWeight();
+    });
 })
